@@ -1,3 +1,5 @@
+### [Heroku server with Frontend](https://ahj-8-1-chat.herokuapp.com/)
+[![Build status](https://ci.appveyor.com/api/projects/status/abd1xcpidf0gyo59?svg=true)](https://ci.appveyor.com/project/MKSInc/ahj-hw-8-sse-ws-1-chat-frontend)
 # 8. Домашнее задание к лекции «EventSource, WebSockets»
 
 Правила сдачи задания:
@@ -11,7 +13,7 @@
 
 ---
 
-## Чат (Frontend, [Backend](https://github.com/MKSInc/AHJ-hw.-8-SSE-WS.-1-Chat-Backend))
+## 8.1 Чат (Frontend, [Backend](https://github.com/MKSInc/AHJ-hw.-8-SSE-WS.-1-Chat-Backend))
 
 ### Легенда
 
