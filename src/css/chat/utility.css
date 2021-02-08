@@ -1,0 +1,12 @@
+[data-visibility="hidden"] {
+  display: none;
+}
+
+[data-id="my-message"] {
+
+  align-self: flex-end;
+
+  border-color: #c0c0f2;
+  background-color: #eaeafb;
+  text-align: right;
+}

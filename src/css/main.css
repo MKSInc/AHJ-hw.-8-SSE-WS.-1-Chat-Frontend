@@ -1,7 +1,42 @@
+:root {
+  --main-br: 20px; /* border-radius */
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Scrollbar on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d3d3d3;
+  border-radius: var(--main-br);
+  border: 2px solid #d3d3d3;
+}
+
+.wrapp-for-firefox::-webkit-scrollbar-thumb {
+  background-color: #1a1a1a;
+  border: 2px solid #1a1a1a;
+}
+
+/* Scrollbar on Firefox */
+* {
+  /*-ms-overflow-style: none; */  /* IE and Edge  !!! Проверить !!!*/
+  scrollbar-width: thin;  /* Firefox */
+  scrollbar-color: #d3d3d3 rgba(0, 0, 0, 0);
+}
+
+.wrapp-for-firefox {
+  scrollbar-color: #1a1a1a rgba(0, 0, 0, 0);
+}
+
+ul {
+  list-style-type: none;
 }
 
 body {
@@ -30,5 +65,5 @@ h2 span {
 }
 
 .container {
-  padding: 15px;
+  padding: 10px;
 }

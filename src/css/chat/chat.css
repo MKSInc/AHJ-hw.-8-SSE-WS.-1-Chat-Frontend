@@ -1,0 +1,189 @@
+.chat {
+  max-width: 700px;
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+.chat__btn {
+  border-radius: var(--main-br);
+
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.chat__content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.chat__column {
+  border: 1px solid #d3d3d3;
+  border-radius: var(--main-br);
+  box-shadow: 0 0 5px 0 gray;
+  background-color: #fff;
+
+  padding: 20px 20px 20px 10px;
+}
+
+.chat__column_1 {
+  flex: 0 0 200px;
+  max-width: 200px;
+
+  padding-right: 25px;
+  margin-top: 20px;
+  margin-right: -20px;
+}
+
+.users-list {
+  max-height: 518px;
+
+  overflow: auto;
+}
+
+.users-list__item {
+  display: flex;
+  align-items: center;
+
+  font-style: italic;
+}
+
+.users-list__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.users-list__item::before {
+  content: '';
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #d3d3d3;
+  border-radius: var(--main-br);
+
+  margin-right: 10px;
+}
+
+.chat__column_2 {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 0 300px;
+  height: 600px;
+
+  padding-left: 20px;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: var(--main-br);
+
+  margin-bottom: 10px;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border-radius: var(--main-br);
+  box-shadow: inset 0 0 15px 15px #d3d3d3;
+
+  pointer-events: none; /* Что бы под wrapper::before работала прокрутка */
+}
+
+/* Дополнительная обертка для firefox, так как последний флекс элемент налезает на нижний padding
+   flex контейнера (а так же не прокручивает нижний margin у последнего flex элемента (сообщения)),
+   из-за чего сообщение прилипает к нижней границе родительского блока.
+   Для Chrome эта обертка не нужна, а эти свойства помещаются в .messages-list
+ */
+.wrapp-for-firefox {
+  height: 100%;
+  overflow: auto;
+}
+
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 20px;
+}
+
+.messages-list__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.message {
+  max-width: 90%;
+
+  border: 1px solid #c0c0f2;
+  border-radius: var(--main-br);
+  box-shadow: 0 0 5px 0 #dedede;
+  padding: 7px 15px;
+}
+
+.message__header {
+  font-size: 80%;
+  font-style: italic;
+}
+
+.message__text {
+  margin-top: 5px;
+}
+
+.chat__menu {
+  text-align: right;
+
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.wrapp-textarea {
+  height: 110px; /* Что бы прокрутка появлялась только если в сообщении больше четырех строчек */
+
+  border-radius: var(--main-br);
+  box-shadow: inset 0 0 5px 0 #dedede;
+  padding: 10px 0 10px 15px;
+
+  overflow: hidden; /* Что бы скролл не вылезал за круглые рамки */
+}
+
+.chat__input {
+  width: 100%;
+  height: 100%;
+
+  font-size: 110%;
+  border: none;
+
+  background-color: rgba(0, 0, 0, 0);
+  vertical-align: bottom;
+
+  resize: none;
+  outline: none;
+}
+
+.test {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  width: 100px;
+  height: 50px;
+
+  border: 1px solid #dedede;
+  background-color: white;
+  border-radius: var(--main-br);
+  box-shadow: 10px 10px 5px 1px #dedede;
+  opacity: 0.9;
+}
+
+.test:hover {
+  box-shadow: 0 0 5px 1px #dedede;
+  transform: translate(10px, 10px);
+}
