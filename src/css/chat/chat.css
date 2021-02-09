@@ -4,13 +4,6 @@
   margin: 0 auto;
 }
 
-.chat__btn {
-  border-radius: var(--main-br);
-
-  padding: 5px 10px;
-  margin-left: 10px;
-}
-
 .chat__content {
   display: flex;
   align-items: flex-start;
@@ -145,6 +138,13 @@
   margin-bottom: 10px;
 }
 
+.chat__btn {
+  border-radius: var(--main-br);
+
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
 .wrapp-textarea {
   height: 110px; /* Что бы прокрутка появлялась только если в сообщении больше четырех строчек */
 
@@ -169,21 +169,7 @@
   outline: none;
 }
 
-.test {
-  position: absolute;
-  top: 200px;
-  left: 200px;
-  width: 100px;
-  height: 50px;
-
-  border: 1px solid #dedede;
-  background-color: white;
-  border-radius: var(--main-br);
-  box-shadow: 10px 10px 5px 1px #dedede;
-  opacity: 0.9;
-}
-
-.test:hover {
-  box-shadow: 0 0 5px 1px #dedede;
-  transform: translate(10px, 10px);
+.chat__input:focus .wrapp-textarea {
+  box-shadow: inset 0 0 5px 0 #bababa;
+  background-color: red;
 }

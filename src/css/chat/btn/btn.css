@@ -4,18 +4,21 @@
 
   box-shadow: 0 0 5px 0 #d3d3d3; /* 83% */
 
-  cursor: pointer;
   outline: none;
 }
 
-.btn:hover {
+/* Эффекты от взаимодействия с кнопкой будут действовать, только если у кнопки нет аттрибута disabled. */
+.btn:enabled:hover {
+  cursor: pointer;
+
+  box-shadow: 0 0 5px 0 #bababa; /* 83% */
   background-color: #efefef; /* 94% */
 }
 
-.btn:focus {
-  border-color: #bababa;
+.btn:enabled:focus {
+  box-shadow: 0 0 5px 0 gray;
 }
 
-.btn:active {
+.btn:enabled:active {
   background-color: #dedede; /* 87% */
 }

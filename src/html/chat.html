@@ -1,0 +1,52 @@
+<div data-widget="chat" class="chat">
+  <div data-visibility="hidden" class="modal">
+    <form class="modal__form">
+      <div class="modal__title">Type your name</div>
+      <input class="modal__value" type="text" name="name" required>
+      <div class="modal__control">
+        <button class="btn modal__btn">Continue</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="chat__body">
+    <div class="chat__content">
+      <div class="chat__column chat__column_1">
+        <ul class="users-list">
+          <li class="users-list__item">User 1</li>
+          <li class="users-list__item">User 2</li>
+        </ul>
+      </div>
+      <div class="chat__column chat__column_2">
+        <div data-messages-list="wrapper" class="wrapper">
+          <div class="wrapp-for-firefox">
+            <ul class="messages-list">
+              <!--
+              <li data-id="my-message" class="messages-list__item message">
+                <span class="message__header"><strong>User 1</strong>, 23:04 02.02.2021</span>
+                <p class="message__text">Привет!</p>
+              </li>
+
+              <li class="messages-list__item message">
+                <span class="message__header"><strong>User 2</strong>, 23:05 02.02.2021</span>
+                <p class="message__text">Привет!</p>
+              </li>
+              -->
+            </ul>
+          </div>
+        </div>
+
+        <nav class="chat__menu">
+          <button class="btn chat__btn">?</button>
+          <button data-action="login-logout" class="btn chat__btn" disabled>Login</button>
+          <button class="btn chat__btn">Send</button>
+        </nav>
+
+        <div class="wrapp-textarea">
+          <textarea class="chat__input" rows="5" required placeholder="Type your message here"></textarea>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
