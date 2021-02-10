@@ -1,7 +1,8 @@
-<div data-modal="container" data-visibility="hidden" class="modal">
+<div data-modal="container" data-visibility="d-none" class="modal">
   <form data-modal="form" class="modal__form">
     <div class="modal__title">Type your name</div>
     <input data-form-value="name" class="modal__value" type="text" name="name" minlength="3" required>
+    <span data-modal="err-msg" data-visibility="v-hidden" class="modal__err-msg">This name already taken</span>
     <div class="modal__control">
       <button class="btn modal__btn">Continue</button>
     </div>

@@ -1,13 +1,9 @@
-[data-visibility="hidden"] {
+[data-visibility="d-none"] {
   display: none;
 }
 
-/* visually-hidden*/
 [data-visibility="v-hidden"] {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
+   visibility: hidden;
 }
 
 [data-visibility="shaded"] {

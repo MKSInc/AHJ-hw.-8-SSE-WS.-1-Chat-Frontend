@@ -80,6 +80,7 @@ export default class Modal {
     }
   }
 
+  // Нажатие клавиши на document (внутри страницы).
   onDocKeydown(event) {
     if (event.key === 'Escape') {
       this.resolve();
@@ -96,7 +97,9 @@ export default class Modal {
     // Можно убрать прокрутку страницы во время показа модального окна.
     // В данном случае возможность прокрутки оставлена.
     // document.body.style.overflowY = 'hidden';
+  }
 
+  getData() {
     return new Promise((resolve) => {
       this.resolve = resolve;
     });
@@ -105,7 +108,7 @@ export default class Modal {
   hide() {
     document.removeEventListener('keydown', this.handlers.onDocKeydown);
     // this.docContainerEL.removeAttribute('data-visibility');
-    this.els.modal.dataset.visibility = 'hidden';
+    this.els.modal.dataset.visibility = 'd-none';
 
     // Вернуть прокрутку страницы после закрытия модального окна.
     // document.body.style.overflowY = '';
