@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 import chatHTML from '../html/chat.html';
+import UsersList from './UsersList';
+import BtnLoginLogout from './BtnLoginLogout';
 import ModalLogin from './ModalLogin';
 import HiddenTempEl from './utility';
 
@@ -7,24 +9,28 @@ export default class Chat {
   constructor(rootURL) {
     this.els = {
       chat: null,
+      parentUsersList: null,
       btns: {
         loginLogout: null,
       },
+      // wrappInput: null,
+      input: null,
     };
 
     this.selectors = {
       chat: '[data-widget="chat"]',
+      parentUsersList: '[data-parent="users-list"]',
       btns: {
         loginLogout: '[data-action="login-logout"]',
       },
+      // wrappInput: '[data-chat="wrapp-input"]',
+      input: '[data-chat="input"]',
     };
 
     // entities
     this.ents = {
-      btnLoginLogout: {
-        disabled: true,
-        state: 'login',
-      },
+      btnLoginLogout: null,
+      usersList: new UsersList(),
     };
 
     this.modals = {
@@ -45,6 +51,17 @@ export default class Chat {
 
     this.els.btns.loginLogout = this.els.chat.querySelector(this.selectors.btns.loginLogout);
     this.els.btns.loginLogout.addEventListener('click', this.onBtnLoginLogoutClick.bind(this));
+    this.ents.btnLoginLogout = new BtnLoginLogout(this.els.btns.loginLogout);
+
+    this.els.parentUsersList = this.els.chat.querySelector(this.selectors.parentUsersList);
+    this.ents.usersList.init(this.els.parentUsersList);
+
+    // this.els.wrappInput = this.els.chat.querySelector(this.selectors.wrappInput);
+
+    this.els.input = this.els.chat.querySelector(this.selectors.input);
+    // this.els.input.addEventListener('focus', this.onInputFocus.bind(this));
+    // this.els.input.addEventListener('focusout', this.onInputFocusOut.bind(this));
+    this.els.input.disabled = true;
 
     parentEl.append(this.els.chat);
     htEl.remove();
@@ -65,6 +82,11 @@ export default class Chat {
     if (!result.success) return result;
     this.modals.login.hide();
     console.log('Users list:', result);
+    this.ents.usersList.show(result.data);
+    this.ents.btnLoginLogout.setLogoutStatus();
+    this.els.input.disabled = false;
+    this.els.input.focus();
+
     return result;
   }
 
@@ -88,8 +110,9 @@ export default class Chat {
 
     // Если окно входа было закрыто с помощью 'Esc', то активируем кнопку login и выходим.
     if (!formData) {
-      this.ents.btnLoginLogout.disabled = false;
-      this.els.btns.loginLogout.disabled = false;
+      this.ents.btnLoginLogout.disable();
+      this.modals.login.firstEl.value = '';
+      this.modals.login.hideErrMsg();
       result.success = false;
       result.data = 'Modal-login was closed with the \'Esc\' key.';
     } else {
@@ -97,6 +120,7 @@ export default class Chat {
 
       if (!checkNameResult.success) {
         this.modals.login.showErrMsg();
+        this.modals.login.firstEl.focus();
         const recursionResult = await this.getUserName();
         result.success = recursionResult.success; // Для случая, когда нажали 'Esc'.
         result.data = recursionResult.data;
@@ -123,11 +147,20 @@ export default class Chat {
   }
 
   async onBtnLoginLogoutClick() {
-    if (this.ents.btnLoginLogout.state === 'login') {
-      this.els.btns.loginLogout.disabled = true;
+    if (this.ents.btnLoginLogout.status === 'login') {
+      this.ents.btnLoginLogout.disable();
 
       // eslint-disable-next-line no-unused-vars
       const result = await this.activateModalLogin();
     }
   }
+/*
+  onInputFocus() {
+    this.els.wrappInput.dataset.id = 'textarea-focused';
+  }
+
+  onInputFocusOut() {
+    this.els.wrappInput.removeAttribute('data-id', 'textarea-focused');
+  }
+ */
 }

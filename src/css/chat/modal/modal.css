@@ -28,6 +28,7 @@
 .modal__err-msg {
   font-size: 80%;
   font-style: italic;
+  text-shadow: 0 0 5px;
 
   color: coral;
 }

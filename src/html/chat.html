@@ -1,11 +1,12 @@
 <div data-widget="chat" class="chat">
   <div class="chat__body">
     <div class="chat__content">
-      <div class="chat__column chat__column_1">
-        <ul class="users-list">
+      <div data-parent="users-list" class="chat__column chat__column_1">
+        <!--
+        <ul data-id="users-list" class="users-list">
           <li class="users-list__item">User 1</li>
           <li class="users-list__item">User 2</li>
-        </ul>
+        </ul> -->
       </div>
       <div class="chat__column chat__column_2">
         <div data-messages-list="wrapper" class="wrapper">
@@ -33,7 +34,7 @@
         </nav>
 
         <div class="wrapp-textarea">
-          <textarea class="chat__input" rows="5" required placeholder="Type your message here"></textarea>
+          <textarea data-chat="input" class="chat__input" rows="5" required placeholder="Type your message here"></textarea>
         </div>
 
       </div>

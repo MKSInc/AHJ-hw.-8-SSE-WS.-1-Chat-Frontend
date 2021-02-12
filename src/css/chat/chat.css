@@ -38,6 +38,9 @@
   align-items: center;
 
   font-style: italic;
+  overflow: hidden;
+
+  margin-right: 5px;
 }
 
 .users-list__item:not(:last-child) {
@@ -47,7 +50,7 @@
 .users-list__item::before {
   content: '';
 
-  width: 30px;
+  min-width: 30px;
   height: 30px;
 
   border: 1px solid #d3d3d3;

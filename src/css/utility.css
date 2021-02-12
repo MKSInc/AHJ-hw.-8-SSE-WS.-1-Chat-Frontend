@@ -9,3 +9,7 @@
 [data-visibility="shaded"] {
   opacity: 0.3;
 }
+
+[data-id="user-name"] {
+  font-weight: 700;
+}
