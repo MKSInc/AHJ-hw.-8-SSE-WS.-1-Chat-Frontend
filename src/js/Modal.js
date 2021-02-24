@@ -28,6 +28,8 @@ export default class Modal {
       onDocKeydown: this.onDocKeydown.bind(this),
     };
 
+    this.isOpen = false;
+
     this.resolve = null;
 
     // Контент, который будет затеняться с помощью opacity при активации модального окна.
@@ -83,8 +85,7 @@ export default class Modal {
   // Нажатие клавиши на document (внутри страницы).
   onDocKeydown(event) {
     if (event.key === 'Escape') {
-      this.resolve();
-      this.hide();
+      this.close();
     }
   }
 
@@ -93,6 +94,7 @@ export default class Modal {
     // this.docContainerEL.dataset.visibility = 'shaded';
     this.els.modal.removeAttribute('data-visibility');
     this.firstEl.focus();
+    this.isOpen = true;
 
     // Можно убрать прокрутку страницы во время показа модального окна.
     // В данном случае возможность прокрутки оставлена.
@@ -112,10 +114,18 @@ export default class Modal {
 
     // Вернуть прокрутку страницы после закрытия модального окна.
     // document.body.style.overflowY = '';
+
+    this.isOpen = false;
   }
 
   onBtnCancelClick(event) {
     event.preventDefault();
+    this.close();
+  }
+
+  // Метод для закрытия окна из вне. Т.е. завершить промисс не возвращая данных (обычное закрытие) и скрыть само окно.
+  // Метод объединяет действия для onDocKeydown и onBtnCancelClick, избавляя от копипасты.
+  close() {
     this.resolve();
     this.hide();
   }

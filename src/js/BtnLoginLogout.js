@@ -1,29 +1,19 @@
-export default class BtnLoginLogout {
-  constructor(btnEl) {
-    this.btnEl = btnEl;
+import InteractiveEl from './InteractiveEl';
+
+export default class BtnLoginLogout extends InteractiveEl {
+  constructor(el) {
+    super(el);
     this.status = 'login';
-    this.disabled = true;
   }
 
   setLoginStatus() {
-    this.btnEl.textContent = 'Login';
+    this.el.textContent = 'Login';
     this.status = 'login';
-    this.disable();
   }
 
   setLogoutStatus() {
-    this.btnEl.textContent = 'Logout';
+    this.el.textContent = 'Logout';
     this.status = 'logout';
     this.enable();
-  }
-
-  disable() {
-    this.btnEl.disabled = true;
-    this.disabled = true;
-  }
-
-  enable() {
-    this.btnEl.disabled = false;
-    this.disabled = false;
   }
 }

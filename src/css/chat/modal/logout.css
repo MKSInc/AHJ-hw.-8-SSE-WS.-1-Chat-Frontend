@@ -1,0 +1,20 @@
+.logout .modal__form {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.logout .modal__btn {
+  width: 70px;
+}
+
+.logout .modal__btn:first-child {
+  margin-right: 20px;
+}
+
+.logout .modal__control {
+  margin-top: 20px;
+}

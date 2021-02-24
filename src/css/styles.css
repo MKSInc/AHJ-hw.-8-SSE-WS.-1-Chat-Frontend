@@ -1,5 +1,8 @@
+@import "fonts.css";
 @import "main.css";
 @import "chat/chat.css";
 @import "chat/modal/modal.css";
+@import "chat/modal/logout.css";
+@import "chat/modal/help.css";
 @import "chat/btn/btn.css";
 @import "utility.css";

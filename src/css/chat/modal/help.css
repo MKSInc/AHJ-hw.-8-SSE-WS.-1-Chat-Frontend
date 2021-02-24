@@ -1,0 +1,20 @@
+.help {
+  z-index: 2;
+}
+
+.help .modal__form {
+  max-width: 90%;
+}
+
+.chat-control {
+  width: 100%;
+}
+
+.chat-control td {
+  text-align: left;
+  padding: 5px;
+}
+
+.modal__control {
+  margin-top: 15px;
+}

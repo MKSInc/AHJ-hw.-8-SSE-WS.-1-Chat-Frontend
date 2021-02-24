@@ -30,6 +30,11 @@ export default class ModalLogin extends Modal {
     this.els.errMsg.dataset.visibility = 'v-hidden';
   }
 
+  show() {
+    super.show();
+    this.hideErrMsg();
+  }
+
   onFormSubmit(event) {
     super.onFormSubmit(event);
 

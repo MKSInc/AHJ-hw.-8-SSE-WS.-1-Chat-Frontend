@@ -13,3 +13,30 @@
 [data-id="user-name"] {
   font-weight: 700;
 }
+
+[data-message-type="my-message"] {
+  align-self: flex-end;
+
+  border-color: #c0c0f2;
+  background-color: #eaeafb;
+}
+
+[data-message-type="my-message"] .message__header {
+  display: block;
+  text-align: right;
+}
+
+[data-message-type="connected"] {
+  border-color: #cae7ca;
+  background-color: #edf7ed;
+}
+
+[data-message-type="disconnected"] {
+  border-color: #ffb3b3;
+  background-color: #ffe5e5;
+}
+
+[data-message-type="connectionError"] {
+  border-color: #ffb3b3;
+  background-color: #ffe5e5;
+}

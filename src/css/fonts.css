@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "GT Walsheim Pro Condensed";
+  src: url("../fonts/GTWalsheimPro-CondensedRegular.woff2") format("woff2"),
+  url("../fonts/GTWalsheimPro-CondensedRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

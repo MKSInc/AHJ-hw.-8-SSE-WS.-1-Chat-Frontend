@@ -23,17 +23,19 @@
   background-color: #1a1a1a;
   border: 2px solid #1a1a1a;
 }
+/* ------------------------------------- */
 
 /* Scrollbar on Firefox */
 * {
-  /*-ms-overflow-style: none; */  /* IE and Edge  !!! Проверить !!!*/
-  scrollbar-width: thin;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: thin;     /* Firefox */
   scrollbar-color: #d3d3d3 rgba(0, 0, 0, 0);
 }
 
 .wrapp-for-firefox {
   scrollbar-color: #1a1a1a rgba(0, 0, 0, 0);
 }
+/* -------------------- */
 
 ul {
   list-style-type: none;

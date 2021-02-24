@@ -1,12 +1,10 @@
 export default class UsersList {
-  constructor() {
+  constructor(data) {
     this.els = {
       usersList: null,
     };
 
-    this.selectors = {
-      // usersList: '[data-id="users-list"]',
-    };
+    this.data = data;
   }
 
   init(parentEl) {
@@ -18,18 +16,25 @@ export default class UsersList {
   }
 
   show(data) {
-    const { userName, userNames } = data;
+    const { userNames } = data;
     const sortedUserNames = this.sort(userNames);
 
     const usersEls = sortedUserNames.map((el) => {
       const liEl = document.createElement('li');
-      if (el === userName) liEl.setAttribute('data-id', 'user-name');
+
+      if (el === this.data.userName) liEl.setAttribute('data-id', 'user-name');
       liEl.classList.add('users-list__item');
       liEl.textContent = el;
       return liEl;
     });
 
+    this.clear();
     this.els.usersList.append(...usersEls);
+    this.data.usersCount = userNames.length;
+  }
+
+  clear() {
+    this.els.usersList.textContent = '';
   }
 
   // Сортирует список имен по алфавиту.

@@ -76,6 +76,7 @@
   overflow: hidden;
 
   border-radius: var(--main-br);
+  background-color: #f7f7f7;
 
   margin-bottom: 10px;
 }
@@ -121,6 +122,7 @@
 
   border: 1px solid #c0c0f2;
   border-radius: var(--main-br);
+  background-color: white;
   box-shadow: 0 0 5px 0 #dedede;
   padding: 7px 15px;
 }
@@ -131,11 +133,13 @@
 }
 
 .message__text {
+  font-family: 'GT Walsheim Pro Condensed', sans-serif;
   margin-top: 5px;
 }
 
 .chat__menu {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 
   padding: 0 10px;
   margin-bottom: 10px;
@@ -145,7 +149,12 @@
   border-radius: var(--main-br);
 
   padding: 5px 10px;
-  margin-left: 10px;
+}
+
+.btn_login {
+  /* Фиксированная ширина для того, чтобы при смене контента (названия) кнопки, ширина кнопки не влияла
+   на расположение центральной кнопки 'help' */
+  width: 62px;
 }
 
 .wrapp-textarea {
