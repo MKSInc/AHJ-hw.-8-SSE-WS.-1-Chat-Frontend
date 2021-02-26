@@ -134,6 +134,10 @@
 
 .message__text {
   font-family: 'GT Walsheim Pro Condensed', sans-serif;
+
+  /* Перенос слова превышающего ширину блока для сообщения. */
+  overflow-wrap: anywhere;
+
   margin-top: 5px;
 }
 
